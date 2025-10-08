@@ -134,8 +134,8 @@ a:hover{text-decoration-thickness: 2px}
 /* Google Form embed styling */
 .form-embed {
   width: 100%;
-  max-width: 900px;     /* controls maximum width on large screens */
-  margin: 1rem auto;
+  max-width: 1000px;       /* antes 900px; puedes poner 1050px para ocupar todo el container */
+  margin: 1.25rem auto;
   border: 1px solid var(--line);
   border-radius: 12px;
   background: var(--paper);
@@ -146,13 +146,12 @@ a:hover{text-decoration-thickness: 2px}
 .form-embed iframe {
   display: block;
   width: 100%;
-  height: 1300px;       /* adjust if the form is cut off */
+  height: 1500px;          /* sube si el form se corta (p.ej. 1600–1800px) */
 }
 
 @media (max-width: 768px) {
-  .form-embed iframe {
-    height: 1500px;     /* taller on mobile for scrolling comfort */
-  }
+  .form-embed iframe { height: 1700px; }
 }
+
 
 .site-footer{padding:2rem 0; border-top:1px solid var(--line); text-align:center; color:var(--muted)}
