@@ -104,6 +104,12 @@ a:hover{text-decoration-thickness: 2px}
 .note{color:var(--muted); font-size:.95rem}
 
 .img-card{{display:block; width:100%; border-radius:.75rem; border:1px solid var(--line)}}
+.sketch-map {
+  width: 60%;
+  max-width: 420px;
+  margin: 0 auto;
+  display: block;
+}
 
 .hotels-grid{{display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem}}
 .hotels-grid img{{width:100%; aspect-ratio:1.6/1; object-fit:contain; background:#f6f6f6; border:1px solid var(--line); border-radius:.5rem; padding:.5rem}}
