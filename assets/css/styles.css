@@ -82,7 +82,7 @@ a:hover{text-decoration-thickness: 2px}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.5rem 0; /* increase vertical padding */
+  padding: 1.75rem 0; /* increase vertical padding */
 }
 .brand-top{font-size:.8rem; color:var(--muted)}
 .brand h1{font-weight:700}
