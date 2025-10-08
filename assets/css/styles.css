@@ -106,7 +106,7 @@ a:hover{text-decoration-thickness: 2px}
 .img-card{{display:block; width:100%; border-radius:.75rem; border:1px solid var(--line)}}
 .sketch-map {
   width: 60%;
-  max-width: 420px;
+  max-width: 120px;
   margin: 0 auto;
   display: block;
 }
