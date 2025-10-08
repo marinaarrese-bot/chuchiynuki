@@ -40,7 +40,7 @@ a:hover{text-decoration-thickness: 2px}
 .text-link{font-weight:600}
 
 .brand-logo {
-  height: 120px;  /* was 48px, now taller */
+  height: 200px;  /* was 48px, now taller */
   width: auto;
   display: block;
   margin: 0;
@@ -49,7 +49,7 @@ a:hover{text-decoration-thickness: 2px}
 
 @media (max-width: 768px) {
   .brand-logo {
-    height: 65px; /* smaller version on mobile */
+    height: 100px; /* smaller version on mobile */
   }
 }
 
@@ -73,7 +73,7 @@ a:hover{text-decoration-thickness: 2px}
   border-bottom: 1px solid var(--line);
   z-index: 10;
   /* make it taller */
-  min-height: 160px; /* you can try 100px if you want more space */
+  min-height: 250px; /* you can try 100px if you want more space */
   display: flex;
   align-items: center;
 }
@@ -82,7 +82,7 @@ a:hover{text-decoration-thickness: 2px}
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 0; /* increase vertical padding */
+  padding: 1.5rem 0; /* increase vertical padding */
 }
 .brand-top{font-size:.8rem; color:var(--muted)}
 .brand h1{font-weight:700}
@@ -104,7 +104,12 @@ a:hover{text-decoration-thickness: 2px}
 .note{color:var(--muted); font-size:.95rem}
 
 .img-card{{display:block; width:60%; border-radius:.75rem; border:1px solid var(--line)}}
-
+.sketch-map {
+  width: 60%;
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+}
 
 .hotels-grid{{display:grid; grid-template-columns:repeat(3,1fr); gap:.5rem}}
 .hotels-grid img{{width:100%; aspect-ratio:1.6/1; object-fit:contain; background:#f6f6f6; border:1px solid var(--line); border-radius:.5rem; padding:.5rem}}
