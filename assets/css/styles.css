@@ -80,6 +80,7 @@ a:hover{text-decoration-thickness: 2px}
 @media (max-width: 768px) {
   .brand-logo { height: 84px; }
 }
+.brand { display: flex; align-items: center; }
 .brand-top{font-size:.8rem; color:var(--muted)}
 .brand h1{font-weight:700}
 .brand-sub{color:var(--muted); margin-top:.25rem}
