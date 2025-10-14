@@ -1,0 +1,9 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Chuchi y Nuki • Hecho con ♥ para familia y amigos</p>
+  </div>
+</footer>
+<script>
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+</script>
