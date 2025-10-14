@@ -1,14 +1,23 @@
-# Boda — Chuchi y Nuki (GitHub Pages)
+# Boda multipágina — Chuchi & Nuki
 
-Sitio sencillo, estético y responsive para publicar en **GitHub Pages**.
+Estructura lista para GitHub Pages. Sube todo el contenido de esta carpeta a tu repositorio.
 
-## Pasos rápidos
-1. Edita `index.html` si quieres cambiar textos.
-2. Sustituye imágenes en `assets/img/` (hero.jpg, favicon.png, logos de hoteles, mapa-sketch.png).
-3. (Opcional) Ajusta colores en `assets/css/styles.css` en las variables `:root`.
-4. Sube los archivos a un repositorio público en GitHub.
-5. En **Settings → Pages**, elige la rama principal y carpeta `/`.
-6. Añade tu dominio personalizado en **Custom domain** si lo tienes.
+## Estructura
+- `index.html` (Home con RSVP, FAQ, Playlist)
+- `detalles-programa.html`
+- `alojamiento.html`
+- `lista-de-bodas.html`
+- `sitios-favoritos.html`
+- `partials/header.html` y `partials/footer.html`
+- `assets/css/styles.css`
+- `assets/js/includes.js`
 
-## RSVP
-Sustituye el enlace del botón por tu Google Form. En el desplegable del apartado RSVP tienes la lista de campos sugeridos.
+Coloca tus imágenes en `assets/img/` y actualiza enlaces (hoteles, mapas, etc.).
+
+## Publicar en GitHub Pages
+1. Crea un repositorio en GitHub (p.ej. `boda-2026`).
+2. Sube todos los archivos (o arrastra el ZIP descomprimido).
+3. En **Settings → Pages**, elige **Deploy from a branch** y selecciona la rama `main` y carpeta `/ (root)`.
+4. Guarda: GitHub te dará una URL `https://tuusuario.github.io/boda-2026/`.
+
+> Si publicas en una subcarpeta, las rutas relativas funcionarán igual.
