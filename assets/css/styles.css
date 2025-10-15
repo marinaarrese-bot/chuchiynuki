@@ -1,158 +1,187 @@
-/* ---------- Tema base ---------- */
+/* =============================== */
+/*   Boda — Tema "papel & tinta"   */
+/* =============================== */
+
 :root{
-  --bg: #fffdf9;
-  --paper: #ffffff;
-  --ink: #1f2937;
-  --muted: #6b7280;
-  --brand: #7c8c6a;
-  --brand-2: #c7c9b6;
-  --line: #e5e7eb;
+  --paper: #F3F1EA;            /* marfil papel */
+  --ink: #2F2F2D;              /* grafito */
+  --ink-60: rgba(47,47,45,.6);
+  --accent: #C6544A;           /* carmín suave (rayos/granada del PDF) */
+  --accent-20: rgba(198,84,74,.2);
+  --muted: #7B7A74;
+
+  --radius: 18px;
+  --shadow: 0 1px 0 rgba(0,0,0,.04), 0 8px 24px rgba(0,0,0,.08);
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+
+/* Fondo “papel” con leve textura en CSS puro (sin imágenes) */
+html, body{
+  height:100%;
+  background:
+    radial-gradient(1000px 700px at 20% 0%, rgba(0,0,0,.025), transparent 60%),
+    radial-gradient(900px 600px at 80% 100%, rgba(0,0,0,.03), transparent 60%),
+    repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 2px, rgba(0,0,0,.02) 2px 4px),
+    var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Tipografías */
 body{
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  font-size: 16px;
   margin:0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji", "Segoe UI Symbol";
-  color:var(--ink);
-  background:var(--bg);
-  line-height:1.6;
-}
-h1,h2,h3,h4{font-family:"Playfair Display", Georgia, "Times New Roman", serif; line-height:1.25; margin:0 0 .5rem}
-h1{font-size:clamp(2rem, 6vw, 4rem)}
-h2{font-size:clamp(1.5rem, 4.5vw, 2.75rem)}
-h3{font-size:clamp(1.25rem, 3vw, 1.75rem)}
-h4{font-size:1.1rem}
-p{margin:.25rem 0 .75rem}
-a{color:var(--brand); text-decoration-color: color-mix(in oklab, var(--brand) 40%, transparent);}
-a:hover{text-decoration-thickness: 2px}
-
-.skip-link{position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;}
-.skip-link:focus{left:1rem; top:1rem; width:auto; height:auto; background:#fff; padding:.5rem .75rem; border-radius:.5rem; box-shadow:0 1px 4px rgba(0,0,0,.1)}
-
-.container{max-width:1050px; margin:0 auto; padding:0 1.25rem}
-.section{padding:4rem 0}
-.section.alt{background: var(--paper)}
-.eyebrow{letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:var(--muted); font-size:.8rem}
-.lede{font-size:1.1rem; color:var(--muted)}
-
-.btn{display:inline-block; background:var(--brand); color:white; border:none; padding:.75rem 1.1rem; border-radius:.75rem; font-weight:600; text-decoration:none; box-shadow: 0 4px 14px rgba(0,0,0,.08);}
-.btn:hover{transform:translateY(-1px)}
-.text-link{font-weight:600}
-
-
-.grid{display:grid; gap:1.25rem}
-.grid.two{grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));}
-.grid.three{grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));}
-
-.card{background:var(--paper); border:1px solid var(--line); border-radius:1rem; padding:1rem 1.25rem; box-shadow:0 1px 2px rgba(0,0,0,.03)}
-.timeline{list-style:none; padding:0; margin:0; border-left:2px solid var(--brand-2)}
-.timeline li{padding:.25rem 0 .25rem 1rem; position:relative}
-.timeline li time{display:inline-block; min-width:10rem; font-variant-numeric:tabular-nums; color:var(--muted)}
-.timeline li::before{content:""; position:absolute; left:-7px; top:.75rem; width:.65rem; height:.65rem; background:var(--brand); border-radius:999px}
-.site-header {
-  position: sticky;
-  top: 0;
-  backdrop-filter: saturate(180%) blur(10px);
-  background: color-mix(in oklab, var(--bg), white 25%);
-  border-bottom: 1px solid var(--line);
-  z-index: 10;
-  min-height: 110px;
-  display: flex;
-  align-items: center;
 }
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 0;
+h1, h2, h3, h4{
+  font-family: "Caveat", "Playfair Display", serif; /* manuscrito protagonista */
+  color: var(--ink);
+  line-height: 1.1;
+  margin: 0 0 .35rem 0;
 }
 
-.brand-logo {
-  height: 120px;
-  width: auto;
-  display: block;
-  object-fit: contain;
+h1{ font-size: clamp(42px, 6vw, 64px); letter-spacing: .5px; }
+h2{ font-size: clamp(36px, 4.5vw, 48px); }
+h3{ font-size: clamp(28px, 3.2vw, 36px); }
+h4{ font-size: clamp(22px, 2.4vw, 26px); }
+
+p, li{ font-size: 1.05rem; color: var(--ink); }
+.lede{ font-family: "Playfair Display", serif; font-size: 1.15rem; color: var(--muted); }
+
+/* Links & botones */
+a{ color: var(--ink); text-decoration-color: var(--accent-20); text-underline-offset: 2px; }
+a:hover{ text-decoration-color: var(--accent); }
+
+.btn{
+  display:inline-block;
+  background: var(--ink);
+  color:#fff;
+  padding:.9rem 1.15rem;
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+  text-decoration:none;
+  font-weight:600;
+  transition: transform .1s ease, background .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); background: #1f1f1e; }
+
+/* Layout utilidades ya existentes */
+.container{ max-width: 1100px; margin: 0 auto; padding: 0 1.2rem; }
+.section{ padding: clamp(2.5rem, 5vw, 4rem) 0; }
+.section.alt{ background: rgba(0,0,0,.02); }
+
+/* Tarjetas “papel” con borde-lápiz */
+.card{
+  background: #fff;
+  border-radius: var(--radius);
+  padding: 1.15rem 1.15rem 1.1rem;
+  box-shadow: var(--shadow);
+  position: relative;
+  border: 1px solid rgba(0,0,0,.06);
+  outline: 2px dashed rgba(0,0,0,.04);
+  outline-offset: -10px;
+}
+.card h3, .card h4{ margin-bottom:.35rem; }
+
+/* Rejillas existentes */
+.grid{ display:grid; gap: 1rem; }
+.grid.two{ grid-template-columns: 1fr; }
+.grid.three{ grid-template-columns: 1fr; }
+@media (min-width: 720px){
+  .grid.two{ grid-template-columns: 1fr 1fr; }
+  .grid.three{ grid-template-columns: repeat(3, 1fr); }
 }
 
-@media (max-width: 768px) {
-  .brand-logo { height: 84px; }
-}
-.brand { display: flex; align-items: center; }
-.brand-top{font-size:.8rem; color:var(--muted)}
-.brand h1{font-weight:700}
-.brand-sub{color:var(--muted); margin-top:.25rem}
-
-.nav-toggle{display:none}
-.nav-list{display:flex; gap:.5rem; list-style:none; padding:0; margin:0}
-.nav-list a{display:block; padding:.5rem .75rem; border-radius:.5rem}
-.nav-list a:hover{background:var(--paper)}
-
-@media (max-width: 820px){
-  .nav-toggle{display:inline-flex; align-items:center; gap:.5rem; background:var(--paper); border:1px solid var(--line); padding:.4rem .6rem; border-radius:.5rem}
-  .nav-list{display:none; flex-direction:column; position:absolute; right:1.25rem; top:3.25rem; background:var(--paper); border:1px solid var(--line); border-radius:.75rem; padding:.5rem; box-shadow:0 6px 22px rgba(0,0,0,.08)}
-  .nav-list.open{display:flex}
-}
-
-.hero{background:linear-gradient(180deg, color-mix(in oklab, var(--brand) 12%, white), transparent 60%), url('assets/img/hero.jpg') center/cover no-repeat; padding:6rem 0}
-.hero .hero-card{max-width:720px; background: color-mix(in oklab, white 85%, transparent); border:1px solid var(--line); border-radius:1rem; padding:1.25rem 1.5rem; backdrop-filter: blur(4px)}
-.note{color:var(--muted); font-size:.95rem}
-
-/* Imagen genérica en tarjetas */
-.img-card {
-  display: block;
-  width: 100%;
-  border-radius: .75rem;
-  border: 1px solid var(--line);
-}
-
-/* SOLO el croquis: más grande y centrado */
-.sketch-map {
-  width: 70%;
-  max-width: 560px;
-  margin: 0.5rem auto 0;
-  display: block;
-}
-
-.hotels-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: .5rem;
-}
-.hotels-grid img {
-  width: 100%;
-  aspect-ratio: 1.6/1;
-  object-fit: contain;
-  background: #f6f6f6;
-  border: 1px solid var(--line);
-  border-radius: .5rem;
-  padding: .5rem;
-}
-
-/* Google Form embed styling */
-.form-embed {
-  width: 100%;
-  max-width: 1000px;
-  margin: 1.25rem auto;
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  background: var(--paper);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, .04);
+/* HERO — versión con vídeo */
+.hero{
+  position: relative;
+  padding: 0;
+  min-height: clamp(60vh, 68vh, 80vh);
+  display:flex; align-items:center;
   overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,.05);
 }
-.form-embed iframe {
-  display: block;
-  width: 100%;
-  height: 1500px;
+.hero-inner{ width:100%; }
+.hero-video{
+  position: absolute; inset: 0;
+  display: grid; place-items: center;
+  isolation:isolate;
 }
-@media (max-width: 768px) {
-  .form-embed iframe { height: 1700px; }
+.hero-video video{
+  position:absolute; inset:0;
+  width:100%; height:100%;
+  object-fit: cover;
+  filter: saturate(.9) contrast(1.05);
+}
+.hero-overlay{
+  position: relative; z-index:1;
+  color:#fff; text-align:center;
+  padding: clamp(2rem, 6vw, 4rem);
+  text-shadow: 0 2px 16px rgba(0,0,0,.45);
+}
+.hero-overlay .eyebrow{
+  font-family: "Playfair Display", serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  opacity:.9;
+}
+.hero-overlay h2{
+  color:#fff;
+  margin:.25rem 0 .75rem;
+}
+.hero-overlay .btn{ background: var(--accent); }
+.hero-overlay .btn:hover{ background:#b3473f; }
+
+/* Hero (cuando no hay vídeo, por compatibilidad) */
+.hero-card{
+  max-width: 680px; margin: 0 auto;
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(3px);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.4rem;
+  box-shadow: var(--shadow);
 }
 
-.site-footer{padding:2rem 0; border-top:1px solid var(--line); text-align:center; color:var(--muted)}
+/* Timeline / listas */
+.timeline{ list-style:none; padding:0; margin:.5rem 0 0; }
+.timeline li{
+  padding: .7rem 0;
+  border-bottom: 1px dashed rgba(0,0,0,.12);
+}
+.timeline time{ font-weight:600; color: var(--ink); margin-right:.35rem; }
 
-/* ----- Multipágina extra ----- */
-.nav-list a[aria-current="page"] { font-weight: 700; text-decoration: underline; }
-.map-embed iframe { width: 100%; height: 420px; border: 0; border-radius: 8px; }
-.gift-list { list-style: disc; padding-left: 1.25rem; }
-.nav-list a.btn { color: #fff; }
+/* Embeds */
+.form-embed iframe,
+.spotify-embed iframe,
+.map-embed iframe{
+  width: 100%; border: 0; border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.spotify-embed iframe{ height: 352px; }
+.map-embed iframe{ min-height: 360px; }
+
+/* Accesibilidad + skip link */
+.skip-link{
+  position:absolute; left:-9999px; top:auto; width:1px; height:1px; overflow:hidden;
+}
+.skip-link:focus{
+  position:fixed; left:1rem; top:1rem; width:auto; height:auto;
+  padding:.5rem .75rem; background:#000; color:#fff; border-radius:999px; z-index:9999;
+}
+
+/* Footer */
+.site-footer{
+  padding: 2rem 0 3rem; color: var(--muted);
+}
+
+/* Pequeños detalles manuscritos rojos como “subrayados” */
+.text-link{ text-decoration: underline; text-decoration-color: var(--accent-20); }
+.text-link:hover{ text-decoration-color: var(--accent); }
+
+/* Imágenes y media */
+img, video{ max-width:100%; height:auto; border-radius: var(--radius); }
+
+/* Utilidades */
+.eyebrow{ font-size:.9rem; color:#fff; }
