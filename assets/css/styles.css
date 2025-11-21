@@ -185,3 +185,15 @@ img, video{ max-width:100%; height:auto; border-radius: var(--radius); }
 
 /* Utilidades */
 .eyebrow{ font-size:.9rem; color:#fff; }
+.hero-video {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
